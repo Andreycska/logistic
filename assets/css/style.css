@@ -31,6 +31,16 @@ p {
     margin: 0 0 10px;
 }
 
+.img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
 /* CONTAINER */
 
 .container {
@@ -265,6 +275,10 @@ p {
     background: url('../images/clients/map.svg') no-repeat 30px 130px;
 }
 
+.section--grey {
+    background: #E5E5E5;
+}
+
 .section__title {
     margin-bottom: 40px;
 
@@ -480,4 +494,201 @@ p {
 
 .reviews__content p::first-line {
     text-indent: 20px;
+}
+
+/* BENEFITS */
+
+.benefits {
+    display: flex;
+}
+
+.benefits__col {
+    width: 50%;
+}
+
+.benefits-list {
+    width: 100%;
+    max-width: 370px;
+    padding-left: 50px;
+
+    background-image: linear-gradient(to bottom, #fff 40%, #A5A5A5 40%);
+    background-size: 2px 30px;
+    background-repeat: repeat-y;
+    background-position: 12px -4px;
+
+    position: relative;
+}
+
+.benefits-list::before,
+.benefits-list:after {
+    content: "";
+    display: block;
+    width: 26px;
+    height: 36px;
+
+    position: absolute;
+    left: 0;
+    z-index: 1;
+}
+
+.benefits-list::before {
+    background: url('../images/greypin.svg') no-repeat;
+    background-color: #fff;
+
+    top: -5px;
+}
+
+.benefits-list::after {
+    background: url('../images/greenpin.svg') no-repeat;
+    background-color: #fff;
+    
+    bottom: -4px;
+}
+
+.benefits-list__item:not(:last-child) {
+    margin-bottom: 35px;
+}
+
+.benefits-list__title {
+    margin-bottom: 12px;
+
+    font-size: 21px;
+    line-height: 1.2;
+    font-weight: 900;
+    color: #2C2C2C;
+}
+
+.benefits-list__text {
+    font-size: 15px;
+    color: #585858;
+}
+
+/* TEAM */
+
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.team__col {
+    width: 33.3333%;
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+.team__photo {
+    margin-bottom: 13px;
+
+    box-shadow: 10px 5px 13px rgba(0, 0, 0, 0.16);
+}
+
+.team__name {
+    margin-bottom: 5px;
+
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 900;
+    color: #2C2C2C;
+}
+
+.team__prof {
+    margin-bottom: 11px;
+
+    font-size: 15px;
+    color: #585858;
+}
+
+.team__contacts {
+    font-size: 14px;
+    line-height: 1.2;
+    color: #585858;
+}
+
+.team__contacts li {
+    margin-bottom: 9px;
+}
+
+.team__contacts-icon {
+    width: 16px;
+    height: auto;
+    margin-right: 7px;
+}
+
+.team__contacts a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.team__contacts a:focus {
+    outline: none;
+}
+
+.team__contacts a:hover,
+.team__contacts a:focus {
+    text-decoration: underline;
+}
+
+/* MISSOON */
+
+.mission-title {
+    font-size: 90px;
+    line-height: 1;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.mission {
+    margin-top: -25px;
+    margin-bottom: 30px;
+    padding: 60px 30px;
+
+    text-align: center;
+
+    background-color: #fff;
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.16);
+    border-radius: 5px;
+
+    position: relative;
+}
+
+.mission:before,
+.mission::after {
+    content: "";
+    display: block;
+    width: 41.6%;
+    height: 2px;
+
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+}
+
+.mission:before {
+    background-color: #004AF2;
+
+    right: 50%;
+}
+
+.mission::after {
+    background-color: #FC2C2B;
+
+    left: 50%;
+}
+
+.mission__title {
+    margin-bottom: 7px;
+
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #004AF2;
+}
+
+.mission__subtitle {
+    font-size: 21px;
+    font-weight: 400;
+    color: #585858;
 }
