@@ -11,13 +11,17 @@
 </head>
 <body>
 
+<div class="page">
+
     <!-- HEADER -->
 
     <header class="header">
         <div class="container">
             <div class="header__inner">
 
-                <img src="assets/images/hederlogo.svg" alt="CenterLogistic">
+                <a href="index.html">
+                    <img src="assets/images/hederlogo.svg" alt="CenterLogistic">
+                </a>
 
                 <nav class="nav">
                     <a class="nav__link active" href="#">Services</a>
@@ -58,7 +62,7 @@
                             <div class="form__group">
                                 <input class="input input--email" type="email" placeholder="Your e-mail">
                             </div>
-                            <button class="btn btn--block btn--orange" type="submit">Call me back</button>
+                            <button class="btn btn--block btn--orange" type="submit"><span>Call me back</span></button>
                         </form><!--/.FORM-->
 
                     </div><!--/.REQUEST-FORM__CONTENT-->
@@ -199,7 +203,7 @@
                 </div><!--/.CLIENTS__REVIEWS-->
             </div><!--/.CLIENTS-->
 
-            <a class="btn btn--orange" href="#">Become a client</a>
+            <button class="btn btn--orange btn--shadow" type="button"><span>Become a client</span></button>
             <span class="clients-love">we love our clients</span>
 
         </div><!--/.CONTAINER-->
@@ -254,6 +258,8 @@
 
         </div><!--/.CONTAINER-->
     </div><!--/.SECTION-->
+
+    <!-- TEAM -->
 
     <section class="section section--grey">
         <div class="container">
@@ -333,7 +339,7 @@
             </div>
 
             <div class="text-center">
-                <button class="btn btn--orange" type="button">Become a client</button>
+                <button class="btn btn--orange btn--shadow" type="button"><span>Become a client</span></button>
             </div>
 
         </div><!--/.CONTAINER-->
@@ -341,12 +347,113 @@
 
     <!-- NEWS -->
 
-    <section class="section">
+    <section class="section section--last">
         <div class="container">
             <h2 class="section__title"><span>Interesting</span> to read</h2>
 
+            <div class="news">
+
+                <article class="news__item">
+                    <h4 class="news__title"><a href="#">News title</a></h4>
+                    <div class="news__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
+                    <time class="news__date" pubdate="10-02-2021 12:22">10 February, 2021</time>
+                </article>
+
+                <article class="news__item">
+                    <h4 class="news__title"><a href="#">News title</a></h4>
+                    <div class="news__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
+                    <time class="news__date" pubdate="09-02-2021 12:22">09 February, 2021</time>
+                </article>
+
+            </div><!--/.NEWS-->
+
+            <a class="btn btn--orange btn--shadow" href="blog.html"><span>Visit blog</span></a>
+
         </div><!--/.CONTAINER-->
     </section><!--/.SECTION-->
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+        <div class="container">
+            <img src="assets/images/footer-logo.svg" alt="CenterLogistic">
+            <address class="footer__contacts">
+                <p>New York, Street, ZIP code</p>
+                <p>Call Us: <a href="tel:+9948373123">+9948373123</a> or E-mail: <a href="mailto:hello@centerlogistic.com">hello@centerlogistic.com</a></p>
+            </address>
+            <nav class="footer__nav">
+                <a class="footer__nav-link" href="text2.html">Terms & Contidions</a>
+                <a class="footer__nav-link" href="text.html">Privacy Policy</a>
+                <a class="footer__nav-link" href="blog.html">Our blog</a>
+            </nav>
+        </div><!--/.CONTAINER-->
+    </footer><!--/.FOOTER-->
+
+</div><!--/.PAGE-->
+
+    <!-- MODALS -->
+
+    <div class="modal" id="becameClientModal">
+        <div class="modal__inner">
+
+            <div class="modal__header">
+                <h4 class="modal__title">Need to deliver your cargo? <br>We can help!</h4>
+                <div class="modal__text"><p>Fill a little form and we will call you back!</p></div>
+            </div>
+
+            <form class="form" action="#" method="POST">
+                <div class="form__group">
+                    <input class="input input--dark input--person" type="text" placeholder="Your name">
+                </div>
+                <div class="form__group">
+                    <input class="input input--dark input--phone" type="tel" placeholder="Your phone">
+                </div>
+                <div class="form__group">
+                    <input class="input input--dark input--email" type="email" placeholder="Your e-mail">
+                </div>
+                <button class="btn btn--block btn--orange" type="submit"><span>Call me back</span></button>
+            </form><!--/.FORM-->
+
+            <div class="modal__footer">
+                <h4 class="modal__footer-title">Our contacts</h4>
+                <address class="modal__contacts">
+                    <p>New York, Street, ZIP code</p>
+                    <p>Call Us: <a href="tel:+9948373123">+9948373123</a></p> 
+                    <p>E-mail: <a href="mailto:hello@centerlogistic.com">hello@centerlogistic.com</a></p>
+                </address>
+            </div>
+
+            <button class="modal__close" type="button">
+                <img src="assets/images/close.svg" alt="close">
+            </button>
+
+        </div><!--/.MODAL__INNER-->
+    </div><!--/.MODAL-->
+
+    <div class="modal" id="thanksModal">
+        <div class="modal__inner">
+
+            <div class="modal__header">
+                <img class="modal__icon" src="assets/images/modal-tick.svg" alt="tick icon">
+                <h4 class="modal__title">Thanks for your request</h4>
+                <div class="modal__text"><p>We call you back as soon as possible!</p></div>
+            </div>
+
+            <div class="modal__footer">
+                <h4 class="modal__footer-title">Our contacts</h4>
+                <address class="modal__contacts">
+                    <p>New York, Street, ZIP code</p>
+                    <p>Call Us: <a href="tel:+9948373123">+9948373123</a></p> 
+                    <p>E-mail: <a href="mailto:hello@centerlogistic.com">hello@centerlogistic.com</a></p>
+                </address>
+            </div>
+
+            <button class="modal__close" type="button">
+                <img src="assets/images/close.svg" alt="close">
+            </button>
+
+        </div><!--/.MODAL__INNER-->
+    </div><!--/.MODAL-->
     
 </body>
 </html>
