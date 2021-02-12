@@ -2,9 +2,12 @@ body {
     margin: 0;
 
     font-family: 'PT Sans', sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.5;
     color: #585858;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
     background-color: #fff;
 }
@@ -93,7 +96,7 @@ p {
     display: flex;
     height: 100%;
 
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .nav__link {
@@ -168,7 +171,7 @@ p {
 }
 
 .intro__countries {
-    font-size: 15px;
+    font-size: 16px;
     color: #fff;
 }
 
@@ -234,7 +237,7 @@ p {
 }
 
 .request-form__text {
-    font-size: 15px;
+    font-size: 16px;
     color: #fff;
 }
 
@@ -453,7 +456,7 @@ p {
 .services__text {
     margin-bottom: 20px;
 
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.4;
     color: #585858;
 }
@@ -465,7 +468,7 @@ p {
 .services__link {
     display: inline-block;
 
-    font-size: 15px;
+    font-size: 16px;
     color: #004AF2;
     text-decoration: none;
 
@@ -709,7 +712,7 @@ p {
 .team__prof {
     margin-bottom: 11px;
 
-    font-size: 15px;
+    font-size: 16px;
     color: #585858;
 }
 
@@ -817,12 +820,18 @@ p {
 
 .news--column {
     flex-direction: column;
+    margin-bottom: 75px;
 }
 
 .news--column 
 .news__item {
     max-width: none;
     margin-bottom: 45px;
+}
+
+.news--column 
+.news__item:last-child {
+    margin-bottom: 0;
 }
 
 .news__item {
@@ -836,7 +845,7 @@ p {
     margin-bottom: 15px;
 
     font-family: 'PT Sans', sans-serif;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 700;
     color: #2C2C2C;
 }
@@ -858,7 +867,7 @@ p {
 .news__text {
     margin-bottom: 15px;
 
-    font-size: 15px;
+    font-size: 16px;
     color: #585858;
 }
 
@@ -938,14 +947,14 @@ p {
 /* MODALS */
 
 .modal {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: none; 
     width: 100%;
     height: 100%;
+    padding: 40px 15px;
 
+    overflow-y: auto;
     background-color: rgba(0, 0, 0, .9);
+
     position: fixed;
     top: 0;
     left: 0;
@@ -957,7 +966,15 @@ p {
 }
 
 .modal__inner {
-    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+}
+
+.modal__content {
+    width: 100%;
+    max-width: 400px;
     padding: 25px;
 
     background-color: #fff;
@@ -985,7 +1002,7 @@ p {
 }
 
 .modal__text {
-    font-size: 15px;
+    font-size: 16px;
     color: #2C2C2C;
 }
 
@@ -1007,7 +1024,7 @@ p {
 }
 
 .modal__contacts {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 400;
     color: #2C2C2C;
     font-style: normal;
@@ -1062,10 +1079,12 @@ p {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin: 0 -15px;
 }
 
 .main__col {
     width: 50%;
+    padding: 0 15px;
 }
 
 /* TEXT */
@@ -1163,7 +1182,18 @@ text p {
 
 @media (max-width: 991px) {
 
+    /* REQUEST__FORM */
+
+    .request-form--right {
+        margin: 30px auto 0;
+    }
+
     /* INTRO */
+
+    .intro--blog,
+    .intro--text {
+        height: 250px;
+    }
 
     .intro__title {
         font-size: 90px;
@@ -1221,6 +1251,17 @@ text p {
     .footer {
         background-size: 350px auto;
     }
+
+    /* MAIN */
+
+    .main__col--left {
+        width: 55%;
+    }
+
+    .main__col--right {
+        width: 45%;
+    }
+
 }
 
 @media (max-width: 767px) {
@@ -1357,6 +1398,10 @@ text p {
         flex-wrap: wrap;
     }
 
+    .news--column {
+        margin-bottom: 30px;
+    }
+
     .news__item {
         max-width: none;
     }
@@ -1366,6 +1411,18 @@ text p {
      .footer {
         background-size: 250px auto;
         background-position: left 0 bottom 15px, right 0 bottom 15px;
+    }
+
+    /* MAIN */
+
+    .main {
+        flex-direction: column;
+        margin: 0 -15px;
+    }
+
+    .main__col {
+        width: 100%;
+        padding: 0 15px;
     }
 
 }
@@ -1472,6 +1529,18 @@ text p {
 
     .footer {
         background-position: left -120px bottom 0px, right -120px bottom 0px;
+    }
+
+    /* MODAL */
+
+    .modal__title {
+        font-size: 20px;
+    }
+
+    .modal__close {
+        right: 0;
+        top: -30px;
+    }
 }
 
 @media (max-width: 320px) {
