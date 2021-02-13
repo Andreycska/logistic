@@ -15,20 +15,20 @@
 
     <!-- HEADER -->
 
-    <header class="header">
+    <header class="header" id="header">
         <div class="container">
             <div class="header__inner">
 
-                <a href="index.html">
+                <a href="#" data-scroll="#intro">
                     <img class="img" src="assets/images/hederlogo.svg" alt="CenterLogistic">
                 </a>
 
-                <nav class="nav">
-                    <a class="nav__link active" href="#">Services</a>
-                    <a class="nav__link" href="#">Clients</a>
-                    <a class="nav__link" href="#">Benefits</a>
-                    <a class="nav__link" href="#">Team</a>
-                    <a class="nav__link" href="#">News</a>
+                <nav class="nav" id="nav">
+                    <a class="nav__link" href="#" data-scroll="#services">Services</a>
+                    <a class="nav__link" href="#" data-scroll="#clients">Clients</a>
+                    <a class="nav__link" href="#" data-scroll="#benefits">Benefits</a>
+                    <a class="nav__link" href="#" data-scroll="#team">Team</a>
+                    <a class="nav__link" href="#" data-scroll="#news">News</a>
                     <a class="nav__link" href="#">Contact Us</a>
                 </nav><!--/.NAV-->
 
@@ -43,7 +43,7 @@
 
     <!-- INTRO -->
 
-    <div class="intro">
+    <div class="intro" id="intro">
         <div class="container">
             <div class="intro__inner">
 
@@ -85,7 +85,7 @@
 
     <!-- SERVICES -->
 
-    <section class="section">
+    <section class="section" id="services" data-scrollspy="#services">
         <div class="container">
             <div class="services">
 
@@ -137,7 +137,7 @@
 
     <!-- CLIENTS -->
 
-    <section class="section section--map">
+    <section class="section section--map" id="clients" data-scrollspy="#clients">
         <div class="container">
             <h2 class="section__title"><span>Our</span> Clients</h2>
 
@@ -215,7 +215,7 @@
 
     <!-- BENEFITS -->
 
-    <section class="section">
+    <section class="section" id="benefits" data-scrollspy="#benefits">
         <div class="container">
             <h2 class="section__title"><span>Our</span> benefits</h2>
             <div class="benefits">
@@ -265,7 +265,7 @@
 
     <!-- TEAM -->
 
-    <section class="section section--grey">
+    <section class="section section--grey" id="team" data-scrollspy="#team">
         <div class="container">
             <h2 class="section__title"><span>Our</span> Team</h2>
 
@@ -332,7 +332,7 @@
 
     <!-- MISSION -->
 
-    <section class="section">
+    <section class="section" id="mission" data-scrollspy="#mission">
         <div class="container">
 
             <h2 class="mission-title">Our mission</h2>
@@ -351,7 +351,7 @@
 
     <!-- NEWS -->
 
-    <section class="section section--last">
+    <section class="section section--last" id="news" data-scrollspy="#news">
         <div class="container">
             <h2 class="section__title"><span>Interesting</span> to read</h2>
 
@@ -464,6 +464,10 @@
             </div><!--/.MODAL__CONTENT-->
         </div><!--/.MODAL__INNER-->
     </div><!--/.MODAL-->
-    
+
+    <!-- JAVASCRIPT -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="assets/js/app.js"></script>
 </body>
 </html>
