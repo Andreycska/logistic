@@ -124,4 +124,43 @@ $(function(){
         }, 200);
     }
 
+    // SLICK SLIDER https://kenwheeler.github.io/slick/
+
+    // INTRO SLIDER
+
+    let introSlider = $('#introSlider');
+    let reviewsSlider = $('#reviewsSlider');
+
+    introSlider.slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        speed: 500
+      });
+
+      $('#introSliderPrev').on('click', function() {
+        introSlider.slick('slickPrev');
+      });
+
+      $('#introSliderNext').on('click', function() {
+        introSlider.slick('slickNext');
+      });
+
+    //   REVIEWS SLIDER
+
+      reviewsSlider.slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        speed: 500
+      });
+
 });

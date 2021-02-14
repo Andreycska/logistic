@@ -141,8 +141,68 @@ p {
 .intro {
     margin-bottom: 30px;
 
-    background: url('../images/bg.jpg') center no-repeat;
-    background-size: cover;
+    background-color: #000;
+
+    position: relative;
+}
+
+.intro__slider {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.intro__slider .slick-list,
+.intro__slider .slick-track {
+    height: 100%;
+}
+
+.intro__slider-photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.intro__slider-arrows {
+    position: absolute;
+    bottom: 30px;
+    left: 430px;
+}
+
+.intro__slider-btn {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0 3px;
+
+    font-size: 0;
+    color: transparent;
+    text-decoration: none;
+
+    cursor: pointer;
+    background: none;
+    border-style: solid;
+}
+
+.intro__slider-btn:focus {
+    outline: none;
+}
+
+.intro__slider-btn--prev {
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #ffffff transparent transparent;
+}
+
+.intro__slider-btn--next {
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #ffffff;
 }
 
 .intro--blog {
@@ -164,6 +224,9 @@ p {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+
+    position: relative;
+    z-index: 2;
 }
 
 .intro__text {
@@ -495,11 +558,17 @@ p {
     transition: all .2s linear;
 }
 
-.services__link:hover {
+.services__link:focus {
+    outline: none;
+}
+
+.services__link:hover,
+.services__link:focus {
     color: #FF3E2F;
 }
 
-.services__link:hover::after {
+.services__link:hover::after,
+.services__link:focus::after {
     width: 100%;
     background-color: #FF3E2F;
 }
@@ -549,18 +618,78 @@ p {
     position: relative;
 }
 
-.reviews::before {
-    content: "";
-    display: block;
-    width: 92px;
-    height: 126px;
+.reviews .slick-list {
+    padding-top: 20px;
+    z-index: 2;
+}
 
-    background: url('../images/clients/lines.svg') no-repeat;
+.reviews .slick-dots {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 
     position: absolute;
-    top: -15px;
-    left: 2px;
-    z-index: 1;
+    bottom: -20px;
+    left: 0;
+    z-index: 3;
+}
+
+.reviews .slick-dots li {
+    margin: 0 8px;
+}
+
+.reviews .slick-dots button {
+    display: block;
+    width: 10px;
+    height: 10px;
+    padding: 0;
+
+    font-size: 0;
+
+    cursor: pointer;
+    border: 0;
+    border-radius: 50%;
+    background: #dbdbdb;
+    color: transparent;
+
+    transition: all .2s linear;
+}
+
+.reviews .slick-dots button:focus {
+    outline: none;
+}
+
+.reviews .slick-dots li.slick-active button {
+    background: #004af2;
+    box-shadow: 0 0 0 5px rgba(0, 74, 242, .11);
+}
+
+.reviews::before,
+.reviews::after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    z-index: 3;
+}
+
+.reviews::before {
+    background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+
+    left: 0;
+}
+
+.reviews::after {
+    background-image: linear-gradient(to left, #fff, rgba(255, 255, 255, 0));
+
+    right: 0;
+}
+
+.reviews__item {
+    padding: 0 10px;
 }
 
 .reviews__header {
@@ -572,6 +701,20 @@ p {
     z-index: 2;
 }
 
+.reviews__header::before {
+    content: "";
+    display: block;
+    width: 92px;
+    height: 126px;
+
+    background: url('../images/clients/lines.svg') no-repeat;
+
+    position: absolute;
+    top: -13px;
+    left: 2px;
+    z-index: 1;
+}
+
 .reviews__photo {
     width: 100px;
     height: 100px;
@@ -579,6 +722,9 @@ p {
     border-radius: 50%;
     border: 5px solid #fff;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+
+    position: relative;
+    z-index: 2;
 }
 
 .reviews__header-content {
