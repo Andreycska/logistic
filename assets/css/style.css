@@ -141,8 +141,6 @@ p {
 .intro {
     margin-bottom: 30px;
 
-    background-color: #000;
-
     position: relative;
 }
 
@@ -151,10 +149,25 @@ p {
     height: 100%;
     overflow: hidden;
 
+    background: #000 url('../images/bg.jpg') no-repeat center;
+    background-size: cover;
+
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
+}
+
+.intro__slider .slider-item {
+    display: none;
+}
+
+.intro__slider.slick-initialized {
+    background: #000;
+}
+
+.intro__slider.slick-initialized .slider-item {
+    display: block;
 }
 
 .intro__slider .slick-list,
@@ -615,7 +628,16 @@ p {
 /* REVIEWS */
 
 .reviews {
+    height: 200px;
+
     position: relative;
+
+    background: url('../images/ajax-loader.gif') no-repeat center;
+}
+
+.reviews.slick-initialized {
+    height: auto;
+    background: none;
 }
 
 .reviews .slick-list {
@@ -689,6 +711,7 @@ p {
 }
 
 .reviews__item {
+    display: none;
     padding: 0 10px;
 }
 
@@ -1383,7 +1406,7 @@ text p {
 
     .clients {
         flex-direction: column;
-        margin-bottom: 30px;
+        margin-bottom: 60px;
     }
 
     .clients__logos,
@@ -1466,6 +1489,11 @@ text p {
     .intro {
         margin-bottom: 0;
     }
+
+    .intro__slider-arrows {
+        display: none;
+    } 
+    
 
     .intro__inner {
         flex-direction: column;
@@ -1661,6 +1689,12 @@ text p {
 
     .clients__list-logo {
         margin: 0 auto;
+    }
+
+    .clients-love {
+        display: block;
+        margin-left: 0;
+        margin-top: 20px;
     }
 
     /* MISSION */
