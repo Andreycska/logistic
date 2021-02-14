@@ -2,11 +2,13 @@ $(function(){
 
     let header = $('#header');
     let intro = $('#intro');
+    let navToggle = $('#navToggle');
+    let nav = $('#nav');
     let headerH = header.innerHeight(); //hight header
     let introH = intro.innerHeight(); //hieght intro
     let scrollTop = $(window).scrollTop();
 
-    // HEADER CHANGE
+    // HEADER CHANGE ======================================================================
 
     headerScroll();  // Для того чтобы при обновлении страницы выявить нужно прозрачноре меню или темное
 
@@ -26,7 +28,7 @@ $(function(){
         }
     }
 
-    // SMOOTH SCROLL TO SECTION
+    // SMOOTH SCROLL TO SECTION ======================================================================
 
     $('[data-scroll]').on('click', function(event){
 
@@ -35,13 +37,17 @@ $(function(){
         let scrollEl = $(this).data('scroll');
         let scrollElPos = $(scrollEl).offset().top;  //позиция от верха до элемента
 
+        navToggle.removeClass('active');
+        nav.removeClass('show');
+        $('body').removeClass('show-nav');
+
         $('html, body').animate({
             scrollTop: scrollElPos - headerH
         }, 500)
 
     });
 
-    // SCROLL SPY
+    // SCROLL SPY ======================================================================
 
     let windowH = $(window).height();
 
@@ -76,7 +82,7 @@ $(function(){
     }
 
 
-    // MODAL
+    // MODAL ======================================================================
 
     $('[data-modal]').on('click', function(event) {
         event.preventDefault();
@@ -124,7 +130,7 @@ $(function(){
         }, 200);
     }
 
-    // SLICK SLIDER https://kenwheeler.github.io/slick/
+    // SLICK SLIDER https://kenwheeler.github.io/slick/   ======================================================================
 
     // INTRO SLIDER
 
@@ -162,5 +168,22 @@ $(function(){
         autoplaySpeed: 4000,
         speed: 500
       });
+
+    //   BURGER MENU ======================================================================
+
+    navToggle.on('click', function(event) {
+        event.preventDefault();
+
+        $(this).toggleClass('active');
+        nav.toggleClass('show');
+        $('body').toggleClass('show-nav');
+
+    });
+
+    $(window).on('resize', function(){
+        navToggle.removeClass('active');
+        nav.removeClass('show');
+        $('body').removeClass('show-nav');
+    });
 
 });

@@ -12,7 +12,8 @@ body {
     background-color: #fff;
 }
 
-body.no-scroll {
+body.no-scroll,
+body.show-nav {
     overflow: hidden;
 }
 
@@ -81,6 +82,7 @@ p {
     transition: background-color .2s linear;
 }
 
+body.show-nav .header,
 .header--dark {
     background: rgba(0, 0, 0, .9);
 }
@@ -130,12 +132,61 @@ p {
 /* BURGER */
 
 .burger {
+    width: 30px;
+    height: 23px;
     display: none;
     padding: 0;
     background: none;
     border: none;
+
+    font-size: 0;
+    color: transparent;
+    cursor: pointer;
+
+    position: relative;
 }
 
+.burger:focus {
+    outline: none;
+}
+
+.burger__line {
+    display: block;
+    width: 30px;
+    height: 2px;
+    margin: 3px 0;
+
+    background-color: #fff;
+
+    transition: opacity .2s ease-out, transform .2s ease-out;
+}
+
+.burger__line:nth-child(1) {
+    width: 20px;
+    margin-left: auto;
+}
+
+.burger.active .burger__line:nth-child(odd) {
+    opacity: 0;
+}
+
+.burger.active .burger__line:nth-child(even) {
+    position: absolute;
+    left: 0;
+    top: 50%;
+
+    transform-origin: center;
+}
+
+.burger.active .burger__line:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.burger.active 
+.burger__line:nth-child(4) {
+    transform: rotate(-45deg);
+
+}
 /* INTRO */
 
 .intro {
@@ -1455,7 +1506,6 @@ text p {
     /* NAV */
 
     .nav {
-        display: none;
         width: 100%;
         height: auto;
         min-height: calc(100vh - 50px);
@@ -1469,6 +1519,13 @@ text p {
         left: 0;
         right: 0;
         z-index: 1;
+
+        transform: translateX(100%);
+        transition: transform .2s ease-out;
+    }
+
+    .nav.show {
+         transform: translateX(0);
     }
 
     .nav__link {
