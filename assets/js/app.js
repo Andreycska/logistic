@@ -97,7 +97,7 @@ $(function(){
                 transform: 'scale(1)',
                 opacity: '1'
             });
-        });
+        }, 200);
     });
 
     $('[data-modal-close]').on('click', function(event) {
