@@ -201,7 +201,7 @@ body.show-nav .header,
     height: 100%;
     overflow: hidden;
 
-    background: #000 url('../images/bg.jpg') no-repeat center;
+    background: #000 url('../images/slider/slide-1.jpg') no-repeat center;
     background-size: cover;
 
     position: absolute;
@@ -1422,6 +1422,10 @@ text p {
 
     /* INTRO */
 
+    .intro__slider-arrows {
+        display: none;
+    } 
+
     .intro--blog,
     .intro--text {
         height: 250px;
@@ -1508,11 +1512,11 @@ text p {
 
     .nav {
         width: 100%;
-        height: auto;
-        min-height: calc(100vh - 50px);
+        height: calc(100vh - 50px);
         flex-direction: column;
         padding-top: 9px;
 
+        overflow: auto;
         background-color: rgba(0, 0, 0, .85);
 
         position: absolute;
@@ -1546,12 +1550,7 @@ text p {
 
     .intro {
         margin-bottom: 0;
-    }
-
-    .intro__slider-arrows {
-        display: none;
-    } 
-    
+    }    
 
     .intro__inner {
         flex-direction: column;
